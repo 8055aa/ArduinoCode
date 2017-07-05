@@ -1,0 +1,2 @@
+把 IRremote 文件夹放到 编译器安装目录下的\Arduino\libraries里。
+例如我的：C:\Program Files\Arduino\libraries

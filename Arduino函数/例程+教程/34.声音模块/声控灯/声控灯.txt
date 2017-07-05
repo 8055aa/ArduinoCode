@@ -1,0 +1,18 @@
+//声音模块也可以看作是一个声音开关，有声音时 D0脚 输出1，无声音输出0
+//所以在这里我们可以当成按键来处理。非常简单。
+int sensorpin =  2;   //声音模块的D0脚，也是数字输出脚，有声音输出1，无声音输出0
+int ledPin = 13;      // select the pin for the LED
+void setup() {
+ pinMode(ledPin, OUTPUT);    
+ pinMode(sensorpin, INPUT); 
+  Serial.begin(9600); 
+}
+void loop() {   
+  if(digitalRead(sensorpin)==HIGH)//当有声音时，板载LED被点亮5秒钟，之后熄灭
+  {
+     digitalWrite(ledPin,HIGH);
+     delay(5000);
+     digitalWrite(ledPin,LOW);
+  }   
+ delay(10);
+}
